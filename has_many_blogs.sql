@@ -20,7 +20,19 @@ CREATE TABLE users (
   update_at TIMESTAMP with time zone NOT NULL DEFAULT NOW()
   );
 
+
 \d users
+
+CREATE TABLE posts (
+  id SERIAL NOT NULL PRIMARY KEY,
+  title VARCHAR(180) DEFAULT NULL,
+  url VARCHAR(510) DEFAULT NULL,
+  content TEXT DEFAULT NULL,
+  created_at TIMESTAMP with time zone NOT NULL DEFAULT NOW(),
+  update_at TIMESTAMP with time zone NOT NULL DEFAULT NOW()
+  );
+
+\d posts
 
 \c dorybaga
 
