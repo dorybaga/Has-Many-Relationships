@@ -29,7 +29,8 @@ CREATE TABLE posts (
   url VARCHAR(510) DEFAULT NULL,
   content TEXT DEFAULT NULL,
   created_at TIMESTAMP with time zone NOT NULL DEFAULT NOW(),
-  update_at TIMESTAMP with time zone NOT NULL DEFAULT NOW()
+  update_at TIMESTAMP with time zone NOT NULL DEFAULT NOW(),
+  users_id INTEGER REFERENCES users(id)
   );
 
 \d posts
@@ -38,7 +39,9 @@ CREATE TABLE comments (
   id SERIAL NOT NULL PRIMARY KEY,
   body VARCHAR(510) DEFAULT NULL,
   created_at TIMESTAMP with time zone NOT NULL DEFAULT NOW(),
-  update_at TIMESTAMP with time zone NOT NULL DEFAULT NOW()
+  update_at TIMESTAMP with time zone NOT NULL DEFAULT NOW(),
+  users_id INTEGER REFERENCES users(id),
+  posts_id INTEGER REFERENCES posts(id)
   );
 
 \d comments
