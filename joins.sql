@@ -11,7 +11,9 @@ FROM posts INNER JOIN users
 ON users_id = 200;
 
 --Create a query to get all posts fields, and the user's username, from the posts table where the user's first name is 'Norene' and the user's last_name is 'Schmitt'
-
+SELECT posts.*, users.username
+FROM posts INNER JOIN users
+ON users.first_name = 'Norene' AND users.last_name = 'Schmitt';
 
 
 --Create a query to get usernames from the users table where the user has created a post after January 1, 2015
