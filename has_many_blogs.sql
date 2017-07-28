@@ -21,7 +21,7 @@ CREATE TABLE users (
   );
 
 
-\d users
+--\d users
 
 CREATE TABLE posts (
   id SERIAL NOT NULL PRIMARY KEY,
@@ -33,7 +33,7 @@ CREATE TABLE posts (
   users_id INTEGER REFERENCES users(id)
   );
 
-\d posts
+--\d posts
 
 CREATE TABLE comments (
   id SERIAL NOT NULL PRIMARY KEY,
@@ -44,7 +44,9 @@ CREATE TABLE comments (
   posts_id INTEGER REFERENCES posts(id)
   );
 
-\d comments
+--\d comments
+
+
 
 \c dorybaga
 
